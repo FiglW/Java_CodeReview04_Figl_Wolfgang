@@ -8,16 +8,15 @@ public class Product {
     private String description;
     private double oldPrice;
     private double newPrice;
-    private String imgPath;
+    private String image;
 
-    public Product(String name, String quantity, String description, double oldPrice, double newPrice, String imgPath ) {
+    public Product(String name, String quantity, String description, double oldPrice, double newPrice, String image ) {
         this.name = name;
         this.quantity = quantity;
         this.description = description;
         this.oldPrice = oldPrice;
         this.newPrice = newPrice;
-        this.imgPath = imgPath;
-
+        this.image = image;
     }
 
     public String getName() {
@@ -60,12 +59,12 @@ public class Product {
         this.newPrice = newPrice;
     }
 
-    public String getImgPath() {
-        return imgPath;
+    public String getImage() {
+        return image;
     }
 
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
