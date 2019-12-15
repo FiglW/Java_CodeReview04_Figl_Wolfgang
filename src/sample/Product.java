@@ -3,20 +3,21 @@ package sample;
 import javafx.scene.image.Image;
 
 public class Product {
-    String name;
-    String quantity;
-    String description;
-    double oldPrice;
-    double newPrice;
-    Image image;
+    private String name;
+    private String quantity;
+    private String description;
+    private double oldPrice;
+    private double newPrice;
+    private String imgPath;
 
-    public Product(String name, String quantity, String description, double oldPrice, double newPrice, Image image) {
+    public Product(String name, String quantity, String description, double oldPrice, double newPrice, String imgPath ) {
         this.name = name;
         this.quantity = quantity;
         this.description = description;
         this.oldPrice = oldPrice;
         this.newPrice = newPrice;
-        this.image = image;
+        this.imgPath = imgPath;
+
     }
 
     public String getName() {
@@ -57,6 +58,14 @@ public class Product {
 
     public void setNewPrice(double newPrice) {
         this.newPrice = newPrice;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
     @Override
