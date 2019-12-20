@@ -15,6 +15,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class Main extends Application {
 
     @Override
@@ -51,20 +54,26 @@ public class Main extends Application {
 
 
         // Images
-                ImageView image = new ImageView();
-                image.setFitHeight(200);
-                image.setFitWidth(200);
 
+        ImageView image = new ImageView();
+        image.setFitHeight(200);
+        image.setFitWidth(200);
         list.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
             tname.setText(newValue.getName());
             tquantity.setText(newValue.getQuantity());
             tdescription.setText(newValue.getDescription());
             toldprice.setText(String.valueOf(newValue.getOldPrice()));
             tnewprice.setText(String.valueOf(newValue.getNewPrice()));
-            Image im = new Image(newValue.getImage());
-            image.setImage(im);
+
+            Image im = null;
+
+                im = new Image(newValue.getImage());
+                image.setImage(im);
+
+
+
         });
-        
+
 
 
 
@@ -81,7 +90,7 @@ public class Main extends Application {
         HBox btnControls = new HBox(btnAddNew, btnUpdate,btnDelete);
 
         // Productcontrols
-        VBox productControls = new VBox(hBoxname, hBoxquantity,hBoxoldprice,hBoxnewprice, btnControls);
+        VBox productControls = new VBox(hBoxname, hBoxquantity,hBoxoldprice,hBoxnewprice, btnControls,image);
 
         HBox main = new HBox(productControls,list);
 
